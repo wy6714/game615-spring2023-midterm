@@ -10,10 +10,11 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed = 75f;
     int score = 0;
     public TMP_Text scoreText;
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm.createFruits(15);
     }
  
     // Update is called once per frame
