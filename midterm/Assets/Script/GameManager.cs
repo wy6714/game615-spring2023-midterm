@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public static Vector3 getRandomPosition(float a, float b, float c, float d)

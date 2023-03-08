@@ -10,16 +10,25 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed = 75f;
     int score = 0;
     public TMP_Text scoreText;
+    public TMP_Text winText;
+    
+
     public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
         gm.createFruits(15);
+        winText.enabled = false;
     }
  
     // Update is called once per frame
     void Update()
     {
+        
+        if(score == 10)
+        {
+            winText.enabled = true;
+        }
         float hAxis = Input.GetAxis("Horizontal");
         float vAxis = Input.GetAxis("Vertical");
 
