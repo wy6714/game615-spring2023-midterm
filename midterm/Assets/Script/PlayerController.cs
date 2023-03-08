@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,5 +21,14 @@ public class PlayerController : MonoBehaviour
 
         gameObject.transform.Translate(gameObject.transform.forward * Time.deltaTime * moveSpeed * vAxis, Space.World);
         gameObject.transform.Rotate(0, rotateSpeed * Time.deltaTime * hAxis, 0);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.CompareTag("fruits"))
+        {
+            Destroy(other.gameObject);
+         
+        }
     }
 }
