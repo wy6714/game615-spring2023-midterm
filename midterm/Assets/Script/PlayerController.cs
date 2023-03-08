@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public float rotateSpeed = 75f;
+    int score = 0;
+    public TMP_Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+ 
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +31,8 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("fruits"))
         {
             Destroy(other.gameObject);
+            score++;
+            scoreText.text = "Pineapple: " + score.ToString();
          
         }
     }
